@@ -51,7 +51,7 @@ function ItemCard({ item, onDelete, onEdit }: { item: PantryItem; onDelete: (id:
       <div className="flex items-center justify-between mt-3">
         <div>
           <p className="text-gray-600">
-            <span className="font-semibold">{item.quantity}</span> {item.unit}
+            <span className="font-semibold">{item.quantity}</span> {{item.quantity === 1 ? item.unit.replace('bottles','bottle').replace('boxes','box').replace('packets','packet').replace('pieces','piece').replace('cans','can') : item.unit}
           </p>
           {item.expiryDate && (
             <p className={`text-sm ${expiryColor}`}>
